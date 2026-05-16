@@ -102,7 +102,7 @@ export default async function CollectionPage({ params }: { params: Promise<{ cat
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 pb-24">
             {products.map((product) => (
               <div key={product.id} className="group flex flex-col">
-                <div className="relative aspect-[3/4] bg-zinc-900 overflow-hidden mb-3">
+                <Link href={`/product/${product.id}`} className="relative block aspect-[3/4] bg-zinc-900 overflow-hidden mb-3">
                   {product.new_drop && (
                     <div className="absolute top-3 left-3 z-10 bg-white text-black text-[10px] font-bold px-2 py-0.5 tracking-[0.15em]">
                       NEW
@@ -127,15 +127,14 @@ export default async function CollectionPage({ params }: { params: Promise<{ cat
                   />
                   {!product.sold_out && (
                     <div className="absolute inset-x-0 bottom-0 p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-gradient-to-t from-black/90 to-transparent">
-                      <Link
-                        href={`/product/${product.id}`}
+                      <span
                         className="block w-full bg-white text-black font-bold uppercase tracking-widest py-3 text-xs hover:bg-zinc-200 transition-colors text-center"
                       >
                         View Details
-                      </Link>
+                      </span>
                     </div>
                   )}
-                </div>
+                </Link>
                 <Link href={`/product/${product.id}`} className="group/title">
                   <h3 className="font-medium text-zinc-200 text-sm leading-snug mb-1 group-hover/title:text-white transition-colors">
                     {product.name}

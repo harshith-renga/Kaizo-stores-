@@ -33,7 +33,7 @@ export default async function DropsPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {products.map((product) => (
               <div key={product.id} className="group flex flex-col">
-                <div className="relative aspect-[3/4] bg-zinc-900 overflow-hidden mb-4">
+                <Link href={`/product/${product.id}`} className="relative block aspect-[3/4] bg-zinc-900 overflow-hidden mb-4">
                   <div className="absolute top-4 left-4 z-10 bg-white text-black text-[10px] font-bold px-2 py-1 tracking-[0.2em]">
                     NEW DROP
                   </div>
@@ -49,15 +49,14 @@ export default async function DropsPage() {
                   />
                   {!product.sold_out && (
                     <div className="absolute bottom-0 left-0 w-full p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-gradient-to-t from-black/80 to-transparent">
-                      <Link
-                        href={`/product/${product.id}`}
+                      <span
                         className="block w-full bg-white text-black font-bold uppercase tracking-widest py-3 text-sm hover:bg-zinc-200 transition-colors text-center"
                       >
                         View Details
-                      </Link>
+                      </span>
                     </div>
                   )}
-                </div>
+                </Link>
                 <div>
                   <h3 className="font-medium text-zinc-200 text-sm leading-snug mb-1">{product.name}</h3>
                   <p className="text-zinc-400 text-sm">₹{product.price}</p>

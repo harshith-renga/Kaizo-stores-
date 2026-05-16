@@ -57,7 +57,7 @@ export default function Footer() {
               <Link href="/shop" className="text-zinc-500 text-sm hover:text-white transition-colors">Sizing Guide</Link>
               <Link href="/shop" className="text-zinc-500 text-sm hover:text-white transition-colors">Shipping Policy</Link>
               <Link href="/shop" className="text-zinc-500 text-sm hover:text-white transition-colors">Returns</Link>
-              <Link href="/admin" className="text-zinc-700 text-xs hover:text-zinc-500 transition-colors mt-4">Admin Panel</Link>
+              <Link href="/admin" prefetch={false} className="text-zinc-700 text-xs hover:text-zinc-500 transition-colors mt-4">Admin Panel</Link>
             </div>
           </div>
         </div>
