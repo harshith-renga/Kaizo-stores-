@@ -60,9 +60,9 @@ export default async function Home() {
             <div className="absolute inset-0 bg-gradient-to-b from-dark-bg/20 via-dark-bg/60 to-dark-bg z-10" />
             <div className="absolute inset-0 bg-radial-gradient from-transparent to-dark-bg/90 z-10" />
             <img
-              src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?q=80&w=3000&auto=format&fit=crop"
-              alt="Football Stadium Dark Aesthetic"
-              className="w-full h-full object-cover opacity-20 scale-105 animate-[pulse_10s_infinite_alternate]"
+              src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Cristiano_Ronaldo_and_Lionel_Messi_-_Portugal_vs_Argentina%2C_9th_February_2011.jpg"
+              alt="Cristiano Ronaldo vs Lionel Messi Match"
+              className="w-full h-full object-cover opacity-[0.22] scale-105 object-[center_35%] animate-[pulse_10s_infinite_alternate]"
             />
           </div>
 
@@ -190,6 +190,98 @@ export default async function Home() {
           </StaggerContainer>
         </section>
 
+        {/* ─── LEGENDS SHOWCASE ────────────────────────────────────── */}
+        <section className="w-full bg-gradient-to-b from-dark-bg via-dark-surface/10 to-dark-bg py-28 px-4 relative z-10 overflow-hidden border-t border-dark-border/40">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-20">
+              <FadeIn>
+                <p className="text-accent font-barlow uppercase tracking-[0.3em] text-xs font-black mb-3">ICONIC NUMBERS</p>
+                <h2 className="font-bebas text-5xl sm:text-6xl md:text-7xl tracking-wide text-white mb-4 uppercase">
+                  THE LEGENDS COLLECTION
+                </h2>
+                <p className="text-zinc-500 text-sm font-barlow font-bold tracking-wider max-w-xl mx-auto uppercase">
+                  Engineered for greatness. Walk in the footsteps of football's ultimate immortals.
+                </p>
+              </FadeIn>
+            </div>
+
+            <StaggerContainer className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {[
+                {
+                  name: 'CRISTIANO RONALDO',
+                  jersey: 'THE ICON OF 7',
+                  desc: 'Relentless power, elite precision, and unmatched longevity. Shop player-version kits of CR7, from iconic international appearances to classic club achievements.',
+                  image: 'https://upload.wikimedia.org/wikipedia/commons/8/8c/Cristiano_Ronaldo_playing_for_Portugal.jpg',
+                  link: '/collections/player',
+                  accent: '#BD00FF',
+                  badge: 'CR7'
+                },
+                {
+                  name: 'LIONEL MESSI',
+                  jersey: 'THE GOLDEN 10',
+                  desc: 'Unrivaled vision, legendary playmaking, and pure magic on the pitch. Discover premium Argentina retros and club jerseys matching the specifications of the GOAT.',
+                  image: 'https://upload.wikimedia.org/wikipedia/commons/e/e8/Lionel_Messi_20180626.jpg',
+                  link: '/collections/retro',
+                  accent: '#BD00FF',
+                  badge: 'LM10'
+                },
+                {
+                  name: 'NEYMAR JR',
+                  jersey: 'THE SAMBA SHIELD',
+                  desc: 'Samba flair, dazzling dribbles, and absolute creativity. Bring the Brazilian passion to your local pitch with the authentic details of the world’s most entertaining playmaker.',
+                  image: 'https://upload.wikimedia.org/wikipedia/commons/e/e8/Neymar_Junior_the_Future_of_Brazil_2.jpg',
+                  link: '/collections/national',
+                  accent: '#BD00FF',
+                  badge: 'NJ10'
+                }
+              ].map((legend, index) => (
+                <StaggerItem key={index}>
+                  <TiltCard className="h-[480px] border border-dark-border bg-dark-surface/50 hover:border-accent/40 hover:shadow-[0_0_35px_rgba(189,0,255,0.15)] transition-all duration-500">
+                    <div className="relative w-full h-full p-8 flex flex-col justify-end overflow-hidden group">
+                      {/* Image backdrop */}
+                      <div className="absolute inset-0 z-0">
+                        <img
+                          src={legend.image}
+                          alt={legend.name}
+                          className="w-full h-full object-cover opacity-20 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700 ease-out object-[center_20%]"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-dark-bg via-dark-bg/60 to-transparent" />
+                      </div>
+
+                      {/* Content */}
+                      <div className="relative z-10">
+                        <span className="inline-block px-3 py-1 bg-accent/20 border border-accent/30 text-accent font-barlow text-[9px] font-black tracking-widest uppercase mb-4">
+                          {legend.badge} SPECIAL
+                        </span>
+                        
+                        <p className="text-zinc-500 font-barlow text-[10px] font-black tracking-wider uppercase mb-1">
+                          {legend.jersey}
+                        </p>
+                        
+                        <h3 className="font-bebas text-4xl tracking-wider text-white uppercase mb-3">
+                          {legend.name}
+                        </h3>
+                        
+                        <p className="text-zinc-400 font-sans text-xs leading-relaxed mb-6 line-clamp-3">
+                          {legend.desc}
+                        </p>
+                        
+                        <Link
+                          href={legend.link}
+                          className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-[0.25em] font-barlow text-white hover:text-accent transition-colors group/btn"
+                        >
+                          View Related Kits 
+                          <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1.5 transition-transform duration-300 text-accent" />
+                        </Link>
+                      </div>
+                    </div>
+                  </TiltCard>
+                </StaggerItem>
+              ))}
+            </StaggerContainer>
+          </div>
+        </section>
+
         {/* ─── NEW DROPS SECTION ─────────────────────────────────────────── */}
         <section className="w-full bg-dark-surface/60 border-y border-dark-border py-28 px-4 bg-grain relative z-10">
           <div className="max-w-7xl mx-auto">
@@ -288,17 +380,25 @@ export default async function Home() {
 
           <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {[
-              'https://images.unsplash.com/photo-1522778119026-d647f0596c20?q=80&w=600&auto=format&fit=crop',
-              'https://images.unsplash.com/photo-1543326727-cf6c39e8f84c?q=80&w=600&auto=format&fit=crop',
-              'https://images.unsplash.com/photo-1459865264687-595d652de67e?q=80&w=600&auto=format&fit=crop',
-              'https://images.unsplash.com/photo-1487466365202-1afdb86c764e?q=80&w=600&auto=format&fit=crop',
+              'https://upload.wikimedia.org/wikipedia/commons/8/8c/Cristiano_Ronaldo_playing_for_Portugal.jpg',
+              'https://upload.wikimedia.org/wikipedia/commons/e/e8/Lionel_Messi_20180626.jpg',
+              'https://upload.wikimedia.org/wikipedia/commons/e/e8/Neymar_Junior_the_Future_of_Brazil_2.jpg',
+              'https://upload.wikimedia.org/wikipedia/commons/e/e0/Cristiano_Ronaldo_and_Lionel_Messi_-_Portugal_vs_Argentina%2C_9th_February_2011.jpg',
             ].map((src, i) => (
               <StaggerItem key={i}>
                 <TiltCard className="aspect-square">
                   <div className="w-full h-full relative group">
                     <img
                       src={src}
-                      alt={`Kaizo Community Kit ${i + 1}`}
+                      alt={
+                        i === 0
+                          ? 'Cristiano Ronaldo playing for Portugal'
+                          : i === 1
+                          ? 'Lionel Messi playing for Argentina'
+                          : i === 2
+                          ? 'Neymar Junior playing for Brazil'
+                          : 'Cristiano Ronaldo and Lionel Messi face-to-face'
+                      }
                       className="w-full h-full object-cover opacity-30 group-hover:opacity-100 transition-all duration-700 ease-out grayscale group-hover:grayscale-0 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/40 z-20">
