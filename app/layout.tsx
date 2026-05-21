@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Bebas_Neue, Barlow_Condensed } from "next/font/google";
 import ConditionalShell from "@/components/ConditionalShell";
+import CustomCursor from "@/components/CustomCursor";
 import "./globals.css";
 
 const inter = Inter({
@@ -36,6 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${bebasNeue.variable} ${barlowCondensed.variable}`}>
       <body className="min-h-screen flex flex-col bg-dark-bg text-zinc-100 font-sans antialiased selection:bg-accent selection:text-black bg-grain">
+        <CustomCursor />
         <ConditionalShell>{children}</ConditionalShell>
       </body>
     </html>

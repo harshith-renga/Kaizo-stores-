@@ -5,7 +5,7 @@
   --font-bebas: var(--font-bebas-neue);
   --font-barlow: var(--font-barlow-condensed);
   
-  --color-accent: #C8FF00;
+  --color-accent: #BD00FF;
   --color-dark-bg: #070708;
   --color-dark-surface: #0f0f11;
   --color-dark-surface-hover: #16161a;
@@ -45,7 +45,7 @@
 }
 
 .text-stroke:hover {
-  -webkit-text-stroke: 1px #C8FF00;
+  -webkit-text-stroke: 1px #BD00FF;
 }
 
 .bg-grain {
@@ -77,5 +77,5 @@
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #C8FF00;
+  background: #BD00FF;
 }

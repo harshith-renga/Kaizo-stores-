@@ -304,7 +304,7 @@ function CheckoutContent() {
                 type="submit"
                 form="checkout-form"
                 disabled={isSubmitting || (formData.paymentMethod === 'online' && !screenshotUrl)}
-                className="w-full bg-accent text-black font-barlow font-black uppercase tracking-widest py-4.5 hover:bg-white transition-all duration-300 disabled:opacity-30 disabled:cursor-not-allowed flex items-center justify-center text-xs shadow-[0_0_25px_rgba(200,255,0,0.1)] hover:shadow-[0_0_30px_rgba(200,255,0,0.25)]"
+                className="w-full bg-accent text-black font-barlow font-black uppercase tracking-widest py-4.5 hover:bg-white transition-all duration-300 disabled:opacity-30 disabled:cursor-not-allowed flex items-center justify-center text-xs shadow-[0_0_25px_rgba(189,0,255,0.25)] hover:shadow-[0_0_30px_rgba(189,0,255,0.45)]"
               >
                 {isSubmitting ? 'PROCESSING EXPORTS...' : 'SUBMIT SECURE ORDER'}
               </button>

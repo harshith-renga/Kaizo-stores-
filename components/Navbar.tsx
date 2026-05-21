@@ -98,7 +98,7 @@ export default function Navbar() {
               
               <Link 
                 href="/shop"
-                className="hidden lg:inline-flex items-center justify-center bg-white text-black font-barlow text-[11px] font-black uppercase tracking-widest px-6 py-2.5 hover:bg-accent hover:text-black transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.05)] hover:shadow-[0_0_20px_rgba(200,255,0,0.2)]"
+                className="hidden lg:inline-flex items-center justify-center bg-white text-black font-barlow text-[11px] font-black uppercase tracking-widest px-6 py-2.5 hover:bg-accent hover:text-black transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.05)] hover:shadow-[0_0_20px_rgba(189,0,255,0.3)]"
               >
                 SHOP KIT
               </Link>
@@ -141,7 +141,7 @@ export default function Navbar() {
         
         <Link
           href="/shop"
-          className="mt-6 px-12 py-4 bg-accent text-black font-barlow font-black uppercase tracking-widest text-sm hover:bg-white transition-colors duration-300 shadow-[0_0_25px_rgba(200,255,0,0.15)]"
+          className="mt-6 px-12 py-4 bg-accent text-black font-barlow font-black uppercase tracking-widest text-sm hover:bg-white transition-colors duration-300 shadow-[0_0_25px_rgba(189,0,255,0.25)]"
           onClick={() => setIsMobileMenuOpen(false)}
         >
           ENTER CATALOG

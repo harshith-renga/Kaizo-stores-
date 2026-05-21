@@ -26,7 +26,7 @@ export default function Footer() {
                 href={`https://wa.me/${WHATSAPP}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-5 py-3 bg-accent hover:bg-white text-black text-xs font-black uppercase tracking-widest transition-all duration-300 shadow-[0_0_20px_rgba(200,255,0,0.1)] hover:shadow-[0_0_25px_rgba(200,255,0,0.25)]"
+                className="flex items-center gap-2 px-5 py-3 bg-accent hover:bg-white text-black text-xs font-black uppercase tracking-widest transition-all duration-300 shadow-[0_0_20px_rgba(189,0,255,0.15)] hover:shadow-[0_0_25px_rgba(189,0,255,0.35)]"
               >
                 <MessageCircle className="w-4 h-4" />
                 WhatsApp Order
