@@ -17,6 +17,14 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  // Allow dev origins (for accessing dev server over LAN during development)
+  // Add your local IP / host if you're previewing the site from another device.
+  allowedDevOrigins: [
+    'http://localhost:3000',
+    'http://localhost:3001',
+    'http://192.168.1.9:3000',
+    'http://192.168.1.9:3001',
+  ],
   // Allow <img> tags with external sources without warnings
   experimental: {},
 };

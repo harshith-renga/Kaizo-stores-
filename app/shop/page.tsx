@@ -41,8 +41,8 @@ export default async function ShopPage() {
                   href={cat === 'all' ? '/shop' : `/collections/${cat}`}
                   className={`px-6 py-2.5 font-barlow text-xs font-black uppercase tracking-[0.2em] transition-all duration-300 border ${
                     cat === 'all'
-                      ? 'bg-accent text-black border-accent shadow-[0_0_20px_rgba(189,0,255,0.25)]'
-                      : 'border-dark-border text-zinc-400 bg-dark-surface/60 hover:border-accent hover:text-accent'
+                      ? 'bg-accent text-black border-accent shadow-sm'
+                        : 'border-dark-border text-zinc-400 bg-dark-surface/60 hover:border-accent hover:text-accent'
                   }`}
                 >
                   {cat === 'all' ? 'All Kits' : cat === 'club' ? 'Clubs' : cat === 'national' ? 'National Teams' : cat === 'retro' ? 'Retro Classics' : 'Player Editions'}
@@ -103,7 +103,7 @@ function ProductCard({ product }: { product: any }) {
           {!product.sold_out && (
             <div className="absolute inset-x-0 bottom-0 p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-gradient-to-t from-black/90 to-transparent z-20">
               <span
-                className="block w-full bg-accent text-black font-barlow font-black uppercase tracking-widest py-3 text-xs hover:bg-white transition-colors text-center shadow-lg"
+                className="block w-full bg-accent text-black font-barlow font-black uppercase tracking-widest py-3 text-xs hover:bg-dark-surface-hover hover:text-white transition-colors text-center shadow-sm"
               >
                 BUY NOW
               </span>

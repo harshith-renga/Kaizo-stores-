@@ -257,7 +257,7 @@ function CheckoutContent() {
                               }}
                             />
                           </label>
-                          {screenshotUrl && <p className="text-[10px] text-accent mt-3 flex items-center font-barlow font-black tracking-widest"><ShieldCheck className="w-4 h-4 mr-1 animate-pulse" /> TRANSACTION RECIPE LINKED</p>}
+                          {screenshotUrl && <p className="text-[10px] text-accent mt-3 flex items-center font-barlow font-black tracking-widest"><ShieldCheck className="w-4 h-4 mr-1" /> TRANSACTION RECIPE LINKED</p>}
                         </div>
                       </div>
                     )}
@@ -304,7 +304,7 @@ function CheckoutContent() {
                 type="submit"
                 form="checkout-form"
                 disabled={isSubmitting || (formData.paymentMethod === 'online' && !screenshotUrl)}
-                className="w-full bg-accent text-black font-barlow font-black uppercase tracking-widest py-4.5 hover:bg-white transition-all duration-300 disabled:opacity-30 disabled:cursor-not-allowed flex items-center justify-center text-xs shadow-[0_0_25px_rgba(189,0,255,0.25)] hover:shadow-[0_0_30px_rgba(189,0,255,0.45)]"
+                className="w-full bg-accent text-black font-barlow font-black uppercase tracking-widest py-4.5 hover:bg-dark-surface-hover hover:text-white transition-colors duration-200 disabled:opacity-30 disabled:cursor-not-allowed flex items-center justify-center text-xs shadow-sm hover:shadow-md"
               >
                 {isSubmitting ? 'PROCESSING EXPORTS...' : 'SUBMIT SECURE ORDER'}
               </button>
@@ -324,7 +324,7 @@ function CheckoutContent() {
 
 export default function CheckoutPage() {
   return (
-    <Suspense fallback={<div className="min-h-screen bg-dark-bg flex items-center justify-center text-white font-bebas text-2xl tracking-widest animate-pulse bg-grain">Negotiating checkout...</div>}>
+    <Suspense fallback={<div className="min-h-screen bg-dark-bg flex items-center justify-center text-white font-bebas text-2xl tracking-widest bg-grain">Negotiating checkout...</div>}>
       <CheckoutContent />
     </Suspense>
   );

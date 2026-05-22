@@ -73,7 +73,7 @@ export default async function CollectionPage({ params }: { params: Promise<{ cat
           <div className="relative z-20 max-w-7xl mx-auto px-4 md:px-8 pb-12 w-full">
             <FadeIn>
               <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-accent/10 border border-accent/20 rounded-full mb-3">
-                <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+                <span className="w-1.5 h-1.5 rounded-full bg-accent" />
                 <p className="font-barlow text-[9px] font-black tracking-widest text-accent uppercase">COLLECTION VAULT</p>
               </div>
               <h1 className="font-bebas text-6xl md:text-8xl tracking-wider text-white uppercase leading-none">{meta.title}</h1>
@@ -98,8 +98,8 @@ export default async function CollectionPage({ params }: { params: Promise<{ cat
                   href={`/collections/${cat}`}
                   className={`px-6 py-2.5 font-barlow text-xs font-black uppercase tracking-[0.2em] transition-all duration-300 border ${
                     cat === category
-                      ? 'bg-accent text-black border-accent shadow-[0_0_20px_rgba(189,0,255,0.25)]'
-                      : 'border-dark-border text-zinc-400 bg-dark-surface/40 hover:border-accent hover:text-accent'
+                      ? 'bg-accent text-black border-accent shadow-sm'
+                        : 'border-dark-border text-zinc-400 bg-dark-surface/40 hover:border-accent hover:text-accent'
                   }`}
                 >
                   {categoryMeta[cat].title}
@@ -141,7 +141,7 @@ export default async function CollectionPage({ params }: { params: Promise<{ cat
                         {!product.sold_out && (
                           <div className="absolute inset-x-0 bottom-0 p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-gradient-to-t from-black/90 to-transparent z-20">
                             <span
-                              className="block w-full bg-accent text-black font-barlow font-black uppercase tracking-widest py-3 text-xs hover:bg-white transition-colors text-center shadow-lg"
+                              className="block w-full bg-accent text-black font-barlow font-black uppercase tracking-widest py-3 text-xs hover:bg-dark-surface-hover hover:text-white transition-colors text-center shadow-sm"
                             >
                               BUY NOW
                             </span>

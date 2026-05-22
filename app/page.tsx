@@ -4,6 +4,14 @@ import { supabase } from '@/lib/supabase';
 import TiltCard from '@/components/TiltCard';
 import { FadeIn, StaggerContainer, StaggerItem, PageTransition } from '@/components/ScrollReveal';
 
+// Local uploaded images (from the workspace /images folder)
+import heroImg from '../images/Cristiano Ronaldo.jpg';
+import ronaldoImg from '../images/ronaldo.jpg';
+import messiImg from '../images/messi.jpg';
+import messi2010Img from '../images/Messi in 2010_.jpg';
+import neymarImg from '../images/Neymar _ 11.jpg';
+import neymarAltImg from '../images/𝐍𝐄𝐘𝐌𝐀𝐑.jpg';
+
 export const revalidate = 0;
 
 export const metadata = {
@@ -56,13 +64,14 @@ export default async function Home() {
         {/* ─── HERO SECTION ─────────────────────────────────────────── */}
         <section className="relative w-full h-[85vh] flex flex-col justify-center items-center text-center px-4 overflow-hidden bg-grain">
           {/* Background Image & Editorial Overlays */}
-          <div className="absolute inset-0 z-0">
+            <div className="absolute inset-0 z-0">
             <div className="absolute inset-0 bg-gradient-to-b from-dark-bg/20 via-dark-bg/60 to-dark-bg z-10" />
             <div className="absolute inset-0 bg-radial-gradient from-transparent to-dark-bg/90 z-10" />
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Cristiano_Ronaldo_and_Lionel_Messi_-_Portugal_vs_Argentina%2C_9th_February_2011.jpg"
+              src={(heroImg as any)?.src || heroImg}
               alt="Cristiano Ronaldo vs Lionel Messi Match"
-              className="w-full h-full object-cover opacity-[0.22] scale-105 object-[center_35%] animate-[pulse_10s_infinite_alternate]"
+              className="w-full h-full object-cover opacity-[0.22] scale-105"
+              style={{ objectPosition: 'center 35%' }}
             />
           </div>
 
@@ -71,7 +80,7 @@ export default async function Home() {
             {/* Eyebrow badge */}
             <FadeIn delay={0.1}>
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full mb-6 backdrop-blur-sm">
-                <span className="w-2 h-2 rounded-full bg-accent animate-ping" />
+                <span className="w-2 h-2 rounded-full bg-accent" />
                 <span className="font-barlow text-[9px] font-black tracking-[0.25em] text-accent uppercase">NEW SEASON COLLECTION LIVE</span>
               </div>
             </FadeIn>
@@ -93,7 +102,7 @@ export default async function Home() {
               <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto px-4">
                 <Link
                   href="/shop"
-                  className="group relative flex items-center justify-center gap-3 bg-white text-black px-10 py-4.5 font-barlow font-black uppercase tracking-[0.2em] text-xs transition-all duration-300 hover:bg-accent hover:text-black hover:shadow-[0_0_30px_rgba(189,0,255,0.4)]"
+                  className="group relative flex items-center justify-center gap-3 bg-white text-black px-10 py-4.5 font-barlow font-black uppercase tracking-[0.2em] text-xs transition-colors duration-200 hover:bg-accent hover:text-black hover:shadow-sm"
                 >
                   Shop All Kits
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-300" />
@@ -120,7 +129,7 @@ export default async function Home() {
         <section className="w-full bg-dark-surface border-y border-dark-border py-10 px-4 bg-grain relative z-10">
           <FadeIn>
             <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-              {[
+                {[
                 { icon: ShieldCheck, title: 'AUTHENTIC REPLICA & PLAYER SPEC', sub: 'Genuine grade badges & detailing' },
                 { icon: Truck, title: 'SECURE PAN-INDIA SHIPPING', sub: 'Dispatched with tracking alerts' },
                 { icon: Banknote, title: 'CASH ON DELIVERY (COD)', sub: 'Pay securely at your doorstep' },
@@ -211,39 +220,46 @@ export default async function Home() {
                   name: 'CRISTIANO RONALDO',
                   jersey: 'THE ICON OF 7',
                   desc: 'Relentless power, elite precision, and unmatched longevity. Shop player-version kits of CR7, from iconic international appearances to classic club achievements.',
-                  image: 'https://upload.wikimedia.org/wikipedia/commons/8/8c/Cristiano_Ronaldo_playing_for_Portugal.jpg',
+                  image: ronaldoImg,
                   link: '/collections/player',
-                  accent: '#BD00FF',
+                  accent: '#9CA3AF',
                   badge: 'CR7'
                 },
                 {
                   name: 'LIONEL MESSI',
                   jersey: 'THE GOLDEN 10',
                   desc: 'Unrivaled vision, legendary playmaking, and pure magic on the pitch. Discover premium Argentina retros and club jerseys matching the specifications of the GOAT.',
-                  image: 'https://upload.wikimedia.org/wikipedia/commons/e/e8/Lionel_Messi_20180626.jpg',
+                  image: messiImg,
                   link: '/collections/retro',
-                  accent: '#BD00FF',
+                  accent: '#9CA3AF',
                   badge: 'LM10'
                 },
                 {
                   name: 'NEYMAR JR',
                   jersey: 'THE SAMBA SHIELD',
                   desc: 'Samba flair, dazzling dribbles, and absolute creativity. Bring the Brazilian passion to your local pitch with the authentic details of the world’s most entertaining playmaker.',
-                  image: 'https://upload.wikimedia.org/wikipedia/commons/e/e8/Neymar_Junior_the_Future_of_Brazil_2.jpg',
+                  image: neymarImg,
                   link: '/collections/national',
-                  accent: '#BD00FF',
+                  accent: '#9CA3AF',
                   badge: 'NJ10'
                 }
               ].map((legend, index) => (
                 <StaggerItem key={index}>
-                  <TiltCard className="h-[480px] border border-dark-border bg-dark-surface/50 hover:border-accent/40 hover:shadow-[0_0_35px_rgba(189,0,255,0.15)] transition-all duration-500">
+                  <TiltCard className="h-[480px] border border-dark-border bg-dark-surface/50 hover:border-accent/40 hover:shadow-sm transition-all duration-500">
                     <div className="relative w-full h-full p-8 flex flex-col justify-end overflow-hidden group">
                       {/* Image backdrop */}
                       <div className="absolute inset-0 z-0">
                         <img
-                          src={legend.image}
+                          src={(legend.image as any)?.src || legend.image}
                           alt={legend.name}
-                          className="w-full h-full object-cover opacity-20 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700 ease-out object-[center_20%]"
+                          className="w-full h-full object-cover opacity-20 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700 ease-out"
+                          style={{
+                            objectPosition: legend.name.includes('MESSI')
+                              ? 'center 30%'
+                              : legend.name.includes('NEYMAR')
+                              ? 'center 40%'
+                              : 'center 25%'
+                          }}
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-dark-bg via-dark-bg/60 to-transparent" />
                       </div>
@@ -288,7 +304,7 @@ export default async function Home() {
             <div className="flex flex-col md:flex-row justify-between items-end mb-16">
               <FadeIn>
                 <div className="flex items-center gap-2 mb-3">
-                  <Flame className="w-4 h-4 text-accent animate-pulse" />
+                  <Flame className="w-4 h-4 text-accent" />
                   <p className="text-accent font-barlow uppercase tracking-[0.3em] text-xs font-black">LATEST ARRIVALS</p>
                 </div>
                 <h2 className="font-bebas text-5xl sm:text-6xl md:text-7xl tracking-wide text-white leading-none uppercase">
@@ -380,16 +396,16 @@ export default async function Home() {
 
           <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {[
-              'https://upload.wikimedia.org/wikipedia/commons/8/8c/Cristiano_Ronaldo_playing_for_Portugal.jpg',
-              'https://upload.wikimedia.org/wikipedia/commons/e/e8/Lionel_Messi_20180626.jpg',
-              'https://upload.wikimedia.org/wikipedia/commons/e/e8/Neymar_Junior_the_Future_of_Brazil_2.jpg',
-              'https://upload.wikimedia.org/wikipedia/commons/e/e0/Cristiano_Ronaldo_and_Lionel_Messi_-_Portugal_vs_Argentina%2C_9th_February_2011.jpg',
+              ronaldoImg,
+              messiImg,
+              neymarImg,
+              heroImg,
             ].map((src, i) => (
               <StaggerItem key={i}>
                 <TiltCard className="aspect-square">
                   <div className="w-full h-full relative group">
                     <img
-                      src={src}
+                      src={(src as any)?.src || src}
                       alt={
                         i === 0
                           ? 'Cristiano Ronaldo playing for Portugal'
@@ -399,7 +415,16 @@ export default async function Home() {
                           ? 'Neymar Junior playing for Brazil'
                           : 'Cristiano Ronaldo and Lionel Messi face-to-face'
                       }
-                      className="w-full h-full object-cover opacity-30 group-hover:opacity-100 transition-all duration-700 ease-out grayscale group-hover:grayscale-0 group-hover:scale-105"
+                      className="w-full h-full object-cover transition-all duration-700 ease-out grayscale group-hover:grayscale-0 group-hover:scale-105"
+                      style={{
+                        objectPosition:
+                          i === 1
+                            ? 'center 30%'
+                            : i === 2
+                            ? 'center 40%'
+                            : 'center 25%',
+                        opacity: 0.5,
+                      }}
                     />
                     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/40 z-20">
                       <div className="p-3 bg-accent rounded-full text-black shadow-lg">

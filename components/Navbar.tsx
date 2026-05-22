@@ -32,15 +32,15 @@ export default function Navbar() {
     <>
       <header className="fixed top-0 left-0 w-full z-50 flex flex-col">
         {/* Ticker / Announcement Bar */}
-        <div className="w-full bg-accent text-black py-2 px-4 overflow-hidden select-none text-[9px] sm:text-[10px] font-black tracking-[0.3em] flex items-center border-b border-black/10">
-          <div className="whitespace-nowrap animate-marquee flex gap-8">
-            <span className="flex items-center gap-1.5"><Flame className="w-3.5 h-3.5 animate-pulse" /> FREE SHIPPING PAN-INDIA</span>
+        <div className="w-full bg-dark-surface text-zinc-300 py-2 px-4 overflow-hidden select-none text-[9px] sm:text-[10px] font-black tracking-[0.3em] flex items-center border-b border-dark-border">
+            <div className="whitespace-nowrap animate-marquee flex gap-8">
+            <span className="flex items-center gap-1.5"><Flame className="w-3.5 h-3.5" /> FREE SHIPPING PAN-INDIA</span>
             <span>•</span>
             <span>100% PREMIUM AUTENTIC FABRIC & BADGES</span>
             <span>•</span>
             <span>CASH ON DELIVERY (COD) AVAILABLE</span>
             <span>•</span>
-            <span className="flex items-center gap-1.5"><Flame className="w-3.5 h-3.5 animate-pulse" /> FREE SHIPPING PAN-INDIA</span>
+            <span className="flex items-center gap-1.5"><Flame className="w-3.5 h-3.5" /> FREE SHIPPING PAN-INDIA</span>
             <span>•</span>
             <span>100% PREMIUM AUTENTIC FABRIC & BADGES</span>
             <span>•</span>
@@ -95,10 +95,10 @@ export default function Navbar() {
               >
                 <ShoppingBag className="w-5.5 h-5.5" />
               </Link>
-              
-              <Link 
+
+              <Link
                 href="/shop"
-                className="hidden lg:inline-flex items-center justify-center bg-white text-black font-barlow text-[11px] font-black uppercase tracking-widest px-6 py-2.5 hover:bg-accent hover:text-black transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.05)] hover:shadow-[0_0_20px_rgba(189,0,255,0.3)]"
+                className="hidden lg:inline-flex items-center justify-center bg-white/5 text-zinc-200 font-barlow text-[11px] font-black uppercase tracking-widest px-6 py-2.5 hover:bg-dark-surface-hover hover:text-white transition-all duration-300"
               >
                 SHOP KIT
               </Link>
@@ -139,13 +139,13 @@ export default function Navbar() {
           </Link>
         ))}
         
-        <Link
-          href="/shop"
-          className="mt-6 px-12 py-4 bg-accent text-black font-barlow font-black uppercase tracking-widest text-sm hover:bg-white transition-colors duration-300 shadow-[0_0_25px_rgba(189,0,255,0.25)]"
-          onClick={() => setIsMobileMenuOpen(false)}
-        >
-          ENTER CATALOG
-        </Link>
+              <Link
+                href="/shop"
+                className="mt-6 px-12 py-4 bg-accent text-black font-barlow font-black uppercase tracking-widest text-sm hover:bg-dark-surface-hover hover:text-white transition-colors duration-200"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                ENTER CATALOG
+              </Link>
       </div>
       
       {/* Spacer to prevent content overlap under fixed header */}

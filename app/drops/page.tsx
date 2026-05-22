@@ -30,7 +30,7 @@ export default async function DropsPage() {
             
             <FadeIn>
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-accent/10 border border-accent/20 rounded-full mb-4">
-                <span className="w-2 h-2 rounded-full bg-accent animate-ping" />
+                <span className="w-2 h-2 rounded-full bg-accent" />
                 <p className="font-barlow text-[10px] font-black tracking-widest text-accent uppercase">IN STOCK & DISPATCHING NOW</p>
               </div>
 
@@ -38,8 +38,8 @@ export default async function DropsPage() {
               
               <div className="flex items-center justify-center gap-4">
                 <div className="h-[1px] bg-dark-border w-24" />
-                <span className="flex items-center gap-1.5 px-4 py-1.5 bg-accent text-black font-barlow text-xs font-black uppercase tracking-[0.25em] shadow-[0_0_15px_rgba(189,0,255,0.3)]">
-                  <Flame className="w-3.5 h-3.5 animate-pulse" /> CURRENT SELECTION
+                <span className="flex items-center gap-1.5 px-4 py-1.5 bg-accent text-black font-barlow text-xs font-black uppercase tracking-[0.25em]">
+                  <Flame className="w-3.5 h-3.5" /> CURRENT SELECTION
                 </span>
                 <div className="h-[1px] bg-dark-border w-24" />
               </div>
@@ -72,7 +72,7 @@ export default async function DropsPage() {
                         {!product.sold_out && (
                           <div className="absolute inset-x-0 bottom-0 p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-gradient-to-t from-black/90 to-transparent z-20">
                             <span
-                              className="block w-full bg-accent text-black font-barlow font-black uppercase tracking-widest py-3 text-xs hover:bg-white transition-colors text-center shadow-lg"
+                              className="block w-full bg-accent text-black font-barlow font-black uppercase tracking-widest py-3 text-xs hover:bg-dark-surface-hover hover:text-white transition-colors text-center shadow-sm"
                             >
                               BUY NOW
                             </span>

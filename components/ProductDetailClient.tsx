@@ -105,8 +105,8 @@ export default function ProductDetailClient({ product, id }: { product: any; id:
                       onClick={() => setSelectedSize(size)}
                       className={`w-14 h-14 border-2 font-barlow font-black text-sm tracking-widest transition-all duration-300 ${
                         selectedSize === size
-                          ? "border-accent bg-accent text-black shadow-[0_0_20px_rgba(189,0,255,0.35)]"
-                          : "border-dark-border text-zinc-300 bg-dark-surface hover:border-zinc-500"
+                          ? "border-accent bg-accent text-black shadow-sm"
+                            : "border-dark-border text-zinc-300 bg-dark-surface hover:border-zinc-500"
                       }`}
                     >
                       {size}
@@ -145,7 +145,7 @@ export default function ProductDetailClient({ product, id }: { product: any; id:
                         alert("Please choose your size option before proceeding.");
                       }
                     }}
-                    className="block w-full py-5 bg-accent text-black font-barlow font-black uppercase tracking-[0.2em] text-center hover:bg-white transition-all duration-300 text-xs shadow-[0_0_25px_rgba(189,0,255,0.25)] hover:shadow-[0_0_30px_rgba(189,0,255,0.45)]"
+                    className="block w-full py-5 bg-accent text-black font-barlow font-black uppercase tracking-[0.2em] text-center hover:bg-dark-surface-hover hover:text-white transition-colors duration-200 text-xs shadow-sm hover:shadow-md"
                   >
                     PROCEED TO CHECKOUT — ₹{product.price?.toLocaleString("en-IN")}
                   </Link>

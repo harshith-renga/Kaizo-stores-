@@ -53,7 +53,7 @@ export default function TiltCard({
 
     // Update inline style for glare center position
     setGlareBg(
-      `radial-gradient(circle 200px at ${mouseX}px ${mouseY}px, rgba(255, 255, 255, 0.08), rgba(189, 0, 255, 0.03) 50%, transparent 100%)`
+      `radial-gradient(circle 200px at ${mouseX}px ${mouseY}px, rgba(255, 255, 255, 0.06), rgba(156,163,175,0.03) 50%, transparent 100%)`
     );
   };
 
