@@ -229,7 +229,7 @@ export default async function Home() {
                   name: 'LIONEL MESSI',
                   jersey: 'THE GOLDEN 10',
                   desc: 'Unrivaled vision, legendary playmaking, and pure magic on the pitch. Discover premium Argentina retros and club jerseys matching the specifications of the GOAT.',
-                  image: messiImg,
+                  image: messi2010Img,
                   link: '/collections/retro',
                   accent: '#9CA3AF',
                   badge: 'LM10'
@@ -397,7 +397,7 @@ export default async function Home() {
           <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {[
               ronaldoImg,
-              messiImg,
+              messi2010Img,
               neymarImg,
               heroImg,
             ].map((src, i) => (
