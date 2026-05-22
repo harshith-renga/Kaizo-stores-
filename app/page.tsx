@@ -11,6 +11,16 @@ import messiImg from '../images/messi.jpg';
 import messi2010Img from '../images/Messi in 2010_.jpg';
 import neymarImg from '../images/Neymar _ 11.jpg';
 import neymarAltImg from '../images/𝐍𝐄𝐘𝐌𝐀𝐑.jpg';
+import focalPoints from '../images/focalPoints.json';
+
+const focalPointsMap: Record<string, string> = (focalPoints as any) || {};
+
+function getObjectPositionForSrc(src: string | undefined) {
+  if (!src) return 'center 25%';
+  const s = String(src);
+  const filename = s.split('/').pop()?.split('?')[0].split('#')[0] || s;
+  return focalPointsMap[filename] || 'center 25%';
+}
 
 export const revalidate = 0;
 
@@ -71,7 +81,7 @@ export default async function Home() {
               src={(heroImg as any)?.src || heroImg}
               alt="Cristiano Ronaldo vs Lionel Messi Match"
               className="w-full h-full object-cover opacity-[0.22] scale-105"
-              style={{ objectPosition: 'center 35%' }}
+              style={{ objectPosition: getObjectPositionForSrc((heroImg as any)?.src || heroImg) }}
             />
           </div>
 
@@ -254,11 +264,7 @@ export default async function Home() {
                           alt={legend.name}
                           className="w-full h-full object-cover opacity-20 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700 ease-out"
                           style={{
-                            objectPosition: legend.name.includes('MESSI')
-                              ? 'center 30%'
-                              : legend.name.includes('NEYMAR')
-                              ? 'center 40%'
-                              : 'center 25%'
+                            objectPosition: getObjectPositionForSrc((legend.image as any)?.src || legend.image)
                           }}
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-dark-bg via-dark-bg/60 to-transparent" />
@@ -417,12 +423,7 @@ export default async function Home() {
                       }
                       className="w-full h-full object-cover transition-all duration-700 ease-out grayscale group-hover:grayscale-0 group-hover:scale-105"
                       style={{
-                        objectPosition:
-                          i === 1
-                            ? 'center 30%'
-                            : i === 2
-                            ? 'center 40%'
-                            : 'center 25%',
+                        objectPosition: getObjectPositionForSrc((src as any)?.src || src),
                         opacity: 0.5,
                       }}
                     />
