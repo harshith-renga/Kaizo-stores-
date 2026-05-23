@@ -4,13 +4,13 @@ import { supabase } from '@/lib/supabase';
 import TiltCard from '@/components/TiltCard';
 import { FadeIn, StaggerContainer, StaggerItem, PageTransition } from '@/components/ScrollReveal';
 
-// Local uploaded images (from the workspace /images folder)
-import heroImg from '../images/Cristiano Ronaldo.jpg';
-import ronaldoImg from '../images/ronaldo.jpg';
-import messiImg from '../images/messi.jpg';
-import messi2010Img from '../images/Messi in 2010_.jpg';
-import neymarImg from '../images/Neymar _ 11.jpg';
-import neymarAltImg from '../images/𝐍𝐄𝐘𝐌𝐀𝐑.jpg';
+// Local uploaded images (replaced by stable remote placeholders)
+const heroImg = 'https://images.unsplash.com/photo-1616124619460-ff4ed8f4683c?q=80&w=1000&auto=format&fit=crop';
+const ronaldoImg = 'https://images.unsplash.com/photo-1520975910715-0d0e19b7e0b6?q=80&w=1000&auto=format&fit=crop';
+const messiImg = 'https://images.unsplash.com/photo-1512095678676-0395d4d3c9d1?q=80&w=1000&auto=format&fit=crop';
+const messi2010Img = 'https://images.unsplash.com/photo-1526232761682-d26e03ac148e?q=80&w=1000&auto=format&fit=crop';
+const neymarImg = 'https://images.unsplash.com/photo-1508344928928-7165b67de128?q=80&w=1000&auto=format&fit=crop';
+const neymarAltImg = neymarImg;
 import focalPoints from '../images/focalPoints.json';
 
 const focalPointsMap: Record<string, string> = (focalPoints as any) || {};
